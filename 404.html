@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada - Fabri Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: #f4f4f9;
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .error-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 16px 40px 16px;
+        }
+        .error-code {
+            font-size: 7rem;
+            font-weight: 900;
+            color: #4caf50;
+            margin-bottom: 0.2em;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        }
+        .error-message {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 18px;
+        }
+        .error-desc {
+            color: #666;
+            margin-bottom: 32px;
+        }
+        .btn-volver {
+            display: inline-block;
+            background: #4caf50;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: background 0.2s;
+        }
+        .btn-volver:hover { background: #2196f3; }
+        .logo-404 {
+            margin-bottom: 24px;
+        }
+        .logo-404 img {
+            width: 90px;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <a href="index.html" class="logo">Fabri Digital</a>
+            <button id="toggle-darkmode" title="Cambiar modo oscuro/claro">
+                <span id="icon-darkmode">
+                    <svg id="icon-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#bfcfff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+                </span>
+            </button>
+        </div>
+    </header>
+    <div class="error-container">
+        <div class="logo-404">
+            <a href="index.html"><img src="ruta-a-tu-imagen/logo.png" alt="Fabri Digital"></a>
+        </div>
+        <div class="error-code">404</div>
+        <div class="error-message">¡Ups! Página no encontrada</div>
+        <div class="error-desc">La página que buscas no existe o fue movida.<br>Por favor, verifica la URL o vuelve al inicio.</div>
+        <a href="index.html" class="btn-volver">Volver al inicio</a>
+    </div>
+    <script>
+    // Modo oscuro
+    const btnDark = document.getElementById('toggle-darkmode');
+    const iconDark = document.getElementById('icon-darkmode');
+    function setDarkMode(on) {
+        if (on) {
+            document.body.classList.add('dark-mode');
+            iconDark.innerHTML = `<svg id=\"icon-sun\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"5\"/><line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"3\"/><line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"23\"/><line x1=\"4.22\" y1=\"4.22\" x2=\"5.64\" y2=\"5.64\"/><line x1=\"18.36\" y1=\"18.36\" x2=\"19.78\" y2=\"19.78\"/><line x1=\"1\" y1=\"12\" x2=\"3\" y2=\"12\"/><line x1=\"21\" y1=\"12\" x2=\"23\" y2=\"12\"/><line x1=\"4.22\" y1=\"19.78\" x2=\"5.64\" y2=\"18.36\"/><line x1=\"18.36\" y1=\"5.64\" x2=\"19.78\" y2=\"4.22\"/></svg>`;
+            localStorage.setItem('darkmode', '1');
+        } else {
+            document.body.classList.remove('dark-mode');
+            iconDark.innerHTML = `<svg id=\"icon-moon\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#bfcfff\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z\"/></svg>`;
+            localStorage.setItem('darkmode', '0');
+        }
+    }
+    btnDark.addEventListener('click', function() {
+        setDarkMode(!document.body.classList.contains('dark-mode'));
+    });
+    // Mantener preferencia
+    if (localStorage.getItem('darkmode') === '1') setDarkMode(true);
+    </script>
+</body>
+</html> 
