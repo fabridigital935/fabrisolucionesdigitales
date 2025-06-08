@@ -1180,80 +1180,19 @@
             }
         }
 
-        @media (max-width: 480px) {
-            html, body {
-                width: 100vw !important;
-                min-width: 0 !important;
-                max-width: 100vw !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                overflow-x: hidden !important;
-                box-sizing: border-box !important;
-            }
-            #heroImagen {
-                width: 100vw !important;
-                max-width: 100vw !important;
-                height: auto !important;
-                display: block !important;
-                margin: 0 auto !important;
-                object-fit: contain !important;
-            }
-            .hero,
-            .hero-content.container.hero-flex,
-            .hero-imagen {
-                width: 100vw !important;
-                max-width: 100vw !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                box-sizing: border-box !important;
-            }
-            .hero-imagen img {
-                width: 100% !important;
-                max-width: 100vw !important;
-                height: auto !important;
-                object-fit: contain !important;
-                display: block !important;
-                margin: 0 auto !important;
-                min-height: 0 !important;
-                padding: 0 !important;
-            }
-            .hero-imagen {
-                display: block !important;
-                align-items: unset !important;
-                justify-content: unset !important;
-            }
-            .hero-imagen {
-                display: none !important;
-            }
-            #heroImagen,
-            .hero-imagen,
-            .hero-imagen * {
-                display: none !important;
-                visibility: hidden !important;
-                width: 0 !important;
-                height: 0 !important;
-                min-width: 0 !important;
-                min-height: 0 !important;
-                max-width: 0 !important;
-                max-height: 0 !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                overflow: hidden !important;
-            }
-        }
 
         @media (max-width: 480px) {
-            h2 {
-                font-size: 5px !important;
-                font-weight: normal !important;
-                margin: 4px 0 !important;
-                display: inline-block !important;
-                white-space: normal !important;
-                line-height: 1.2;
-                word-break: break-word !important;
-                overflow-wrap: break-word !important;
-                max-width: 50vw !important;
-                text-align: left !important;
+            h2,
+            .servicio-card h3,
+            .sobre-mi-portafolio .sobre-mi-titulo,
+            #sliderServicios .titulo-animado,
+            #sliderPortafolio .titulo-animado,
+            #testimonios h2 {
+                font-size: 1.6rem !important;
+                line-height: 1.3 !important;
+                text-align: center !important;
+                margin: 0 auto 16px auto !important;
+                width: 100% !important;
             }
         }
 
@@ -1670,8 +1609,149 @@
         }
       }
     </style>
+    <!-- Hero mobile sizing: ancho fijo de 300px entre 600px y 300px, responsivo abajo de 300px -->
+    <style>
+      @media (max-width: 600px) {
+        .hero-imagen {
+          width: 100% !important;
+          max-width: 90vw !important;
+          margin: 0 auto !important;
+        }
+        .hero-imagen img {
+          display: block !important;
+          width: 300px !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin: 0 auto !important;
+          min-width: 0 !important;
+        }
+      }
+      @media (max-width: 300px) {
+        .hero-imagen img {
+          width: 90vw !important;
+          height: auto !important;
+          margin: 0 auto !important;
+        }
+      }
+    </style>
+    <style>
+      /* Override: centrar imagen del hero */
+      #heroImagen,
+      .hero-imagen {
+        display: block !important;
+        width: auto !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+      }
+      #heroImagen,
+      .hero-imagen img {
+        display: block !important;
+        width: auto !important;
+        margin: 0 auto !important;
+      }
+    </style>
+    <style>
+      /* Override final: centrar con posicionamiento */
+      #heroImagen {
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+      }
+    </style>
+    <style>
+      /* Override móvil: restaurar width auto y centrar hero-imagen */
+      @media (max-width: 600px) {
+        .hero-imagen {
+          width: auto !important;
+          max-width: none !important;
+          margin: 0 auto !important;
+        }
+        .hero-imagen img {
+          width: 100% !important;
+          max-width: 300px !important;
+          height: auto !important;
+          display: block !important;
+          margin: 0 auto !important;
+        }
+      }
+    </style>
+    <style>
+      /* Override definitivo: centrar hero-imagen con text-align e inline-block */
+      .hero-imagen {
+        text-align: center !important;
+      }
+      .hero-imagen img {
+        display: inline-block !important;
+        margin: 0 auto !important;
+        position: static !important;
+        left: auto !important;
+        transform: none !important;
+      }
+    </style>
+    <style>
+      /* Override Sobre mí: fuente 8px y título alineado izquierda negrita en móviles */
+      @media (max-width: 600px) {
+        .sobre-mi-portafolio .sobre-mi-parrafo { font-size: 8px !important; }
+        .sobre-mi-portafolio .sobre-mi-titulo  { text-align: left !important; font-weight: bold !important; }
+      }
+    </style>
+    <style>
+      /* Override títulos en móviles: font-size 10px, align left, bold para h2 y h3 */
+      @media (max-width: 600px) {
+        h2, h3 {
+          font-size: calc(1.8rem - 8px) !important;
+          text-align: left !important;
+          font-weight: bold !important;
+        }
+      }
+    </style>
+    <style>
+      /* Override específico para títulos en <main> en móviles */
+      @media (max-width: 600px) {
+        main h2,
+        main h3 {
+          font-size: calc(1.8rem - 8px) !important;
+          text-align: left !important;
+          font-weight: bold !important;
+        }
+      }
+    </style>
+    <style>
+      /* Override títulos de sección en móviles (excluye h1) */
+      @media (max-width: 600px) {
+        .sobre-mi-titulo,
+        .titulo-animado,
+        #testimonios h2 {
+          font-size: calc(1.8rem - 8px) !important;
+          text-align: left !important;
+          font-weight: bold !important;
+        }
+      }
+    </style>
+    <!-- Override definitivo de títulos en sliders para mobile ≤480px -->
+    <style>
+      @media (max-width: 480px) {
+        #sliderServicios .titulo-animado,
+        #sliderPortafolio .titulo-animado,
+        #testimonios h2 {
+          font-size: 1.6rem !important;
+          line-height: 1.3 !important;
+          text-align: center !important;
+          margin: 0 auto 16px auto !important;
+          width: 100% !important;
+        }
+      }
+    </style>
+    <style>
+      /* Override padding títulos sliders */
+      #sliderServicios .titulo-animado,
+      #sliderPortafolio .titulo-animado,
+      #testimonios h2 {
+        padding: 12px 0 !important;
+      }
+    </style>
 </head>
-<body>
+<body class="home-page">
     <header id="header" class="header visible">
         <a href="index.html#hero" class="logo">
             <img src="img/nuevo-logo-circular.png" alt="Logo Fabri Digital" />
@@ -1700,11 +1780,12 @@
         <!-- Banner principal (HERO) -->
         <section class="hero" id="heroBanner">
             <div class="hero-content container hero-flex">
-                <div class="hero-imagen">
+                <div class="hero-imagen" style="display:flex;justify-content:center;align-items:center;">
                     <img
                       src="img/fabri-nueva.png"
                       alt="Foto de Fabri"
                       id="heroImagen"
+                      style="width:90vw!important;max-width:600px!important;height:auto!important;display:block;margin:0 auto;"
                     />
                 </div>
                 <h1 style="font-size: 2.7rem; font-weight: 800; line-height: 1.22; max-width: 100vw; width: 100%; display: block; margin: 0 auto; white-space: normal; overflow-wrap: break-word;">
@@ -2348,6 +2429,21 @@
         });
       </script>
       
-
-</body>
+      <!-- Override mobile titles with JS dinámica -->
+      <script>
+        function updateMobileTitles() {
+          if (window.innerWidth <= 480) {
+            document.querySelectorAll('h2, .servicio-card h3, .sobre-mi-portafolio .sobre-mi-titulo, #sliderServicios .titulo-animado, #sliderPortafolio .titulo-animado, #testimonios h2').forEach(el => {
+              el.style.fontSize = '1.6rem';
+              el.style.lineHeight = '1.3';
+              el.style.textAlign = 'center';
+              el.style.margin = '0 auto 16px auto';
+              el.style.width = '100%';
+            });
+          }
+        }
+        window.addEventListener('DOMContentLoaded', updateMobileTitles);
+        window.addEventListener('resize', updateMobileTitles);
+      </script>
+    </body>
 </html>

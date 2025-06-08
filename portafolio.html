@@ -7,11 +7,12 @@
     <meta name="keywords" content="portafolio, diseño web, diseño gráfico, marketing digital">
     <title>Portafolio - Fabri Digital</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap" rel="stylesheet">
     <style>
         body {
             background: #f7faff;
             margin: 0;
-            font-family: 'Montserrat', Arial, sans-serif;
+            font-family: var(--font-primary);
         }
         .banner-portafolio {
             width: 100%;
@@ -151,6 +152,58 @@
                 max-width: 100%;
             }
             .slide-portafolio img { height: 120px; }
+        }
+        @media (max-width: 480px) {
+            .banner-portafolio {
+                min-height: 200px !important;
+                background-position: center !important;
+                background-size: cover !important;
+            }
+            .banner-portafolio .titulo-animado {
+                font-size: 1.8rem !important;
+                text-align: center !important;
+                margin: 0 auto 16px auto !important;
+                padding: 0 16px !important;
+                max-width: 90% !important;
+            }
+            .feed-portafolio {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+                padding: 0 16px !important;
+            }
+            .feed-info h4 {
+                font-size: 1.4rem !important;
+                text-align: center !important;
+                margin-bottom: 12px !important;
+            }
+            .banner-portafolio::after {
+                background: transparent !important;
+            }
+            .banner-portafolio {
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            .slider-portafolio {
+                padding: 0 16px !important;
+            }
+            .slider-track-portafolio {
+                gap: 8px !important;
+            }
+            .slide-portafolio {
+                min-width: 100% !important;
+                max-width: 100% !important;
+            }
+            .slider-btn-portafolio {
+                width: 32px !important;
+                height: 32px !important;
+                font-size: 20px !important;
+            }
+            .slider-btn-portafolio.prev {
+                left: 8px !important;
+            }
+            .slider-btn-portafolio.next {
+                right: 8px !important;
+            }
         }
         .feed-portafolio {
             max-width: 1200px;
@@ -387,20 +440,19 @@
         }
         
         @media (max-width: 768px) {
-            .menu.container {
-                flex-wrap: wrap;
-                align-items: flex-start;
-                position: relative;
-                padding: 10px 20px;
+            .header {
+                justify-content: flex-start !important;
+                padding-left: 16px !important;
             }
             .menu-toggle {
                 display: flex;
-                order: 2;
+                order: 1 !important;
+                margin: 0 8px 0 0 !important;
                 z-index: 1001;
             }
             .logo {
-                order: 1;
-                margin-right: 0;
+                order: 2 !important;
+                margin: 0 8px 0 0 !important;
             }
             #toggle-darkmode {
                 display: flex !important;
@@ -408,7 +460,7 @@
                 right: 20px;
                 top: 50%;
                 transform: translateY(-50%);
-                order: 3;
+                order: 3 !important;
             }
             .navbar {
                 order: 4;
@@ -623,68 +675,76 @@
             }
         }
     </style>
+    <!-- Override para móviles muy pequeños (≤480 px): ajustar hero y títulos -->
     <style>
-        /* Overrides Portafolio: mostrar toggle modo oscuro en móvil y mejorar slider */
-        @media (max-width: 768px) {
-            #toggle-darkmode {
-                display: flex !important;
-                position: absolute;
-                right: 20px;
-                top: 50%;
-                transform: translateY(-50%);
-                order: 3;
-            }
-            .slider-portafolio {
-                max-width: 100vw !important;
-                padding: 0 !important;
-            }
-            .slider-track-portafolio {
-                display: flex !important;
-                gap: 12px !important;
-            }
-            .slide-portafolio {
-                min-width: 80% !important;
-                max-width: 80% !important;
-                margin: 0 auto !important;
-            }
-            .slide-portafolio img {
-                object-fit: contain !important;
-                height: auto !important;
-            }
+      @media (max-width: 480px) {
+        .banner-portafolio {
+          min-height: 200px !important;
+          background-position: center !important;
+          background-size: cover !important;
         }
-        @media (max-width: 600px) {
-            .slide-portafolio {
-                min-width: 100% !important;
-                max-width: 100% !important;
-            }
+        .banner-portafolio .titulo-animado {
+          font-size: 1.8rem !important;
+          text-align: center !important;
+          margin: 0 auto 16px auto !important;
+          padding: 0 16px !important;
+          max-width: 90% !important;
         }
+        .feed-portafolio {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+          padding: 0 16px !important;
+        }
+        .feed-info h4 {
+          font-size: 1.4rem !important;
+          text-align: center !important;
+          margin-bottom: 12px !important;
+        }
+        .slider-portafolio {
+          padding: 0 16px !important;
+        }
+        .slider-track-portafolio {
+          gap: 8px !important;
+        }
+        .slide-portafolio {
+          min-width: 100% !important;
+          max-width: 100% !important;
+        }
+        .slider-btn-portafolio {
+          width: 32px !important;
+          height: 32px !important;
+          font-size: 20px !important;
+        }
+        .slider-btn-portafolio.prev {
+          left: 8px !important;
+        }
+        .slider-btn-portafolio.next {
+          right: 8px !important;
+        }
+      }
     </style>
-    <!-- Override menú desplegable móvil: centrar texto y reducir ancho -->
+    <!-- Override móvil <480px: fuente y títulos Poppins unificados -->
     <style>
-        @media (max-width: 768px) {
-            .navbar {
-                width: auto !important;
-                max-width: 240px !important;
-                left: 16px !important;
-                right: auto !important;
-                text-align: center !important;
-            }
-            .navbar ul {
-                flex-direction: column !important;
-                align-items: center !important;
-                gap: 8px !important;
-            }
-            .navbar ul li {
-                width: 100% !important;
-            }
-            .navbar ul li a {
-                display: block !important;
-                text-align: center !important;
-            }
+      @media (max-width: 480px) {
+        body { font-family: var(--font-primary) !important; }
+        .banner-portafolio .titulo-animado {
+          font-size: 1.6rem !important;
+          text-align: center !important;
+          margin: 0 auto 16px auto !important;
+          padding: 0 16px !important;
+          max-width: 90% !important;
+          font-family: var(--font-primary) !important;
         }
+        .feed-info h4 {
+          font-size: 1.6rem !important;
+          text-align: center !important;
+          margin-bottom: 12px !important;
+          font-family: var(--font-primary) !important;
+        }
+      }
     </style>
 </head>
-<body>
+<body class="portafolio-page">
     <header id="header" class="header visible">
         <a href="index.html#hero" class="logo">
           <img src="img/nuevo-logo-circular.png" alt="Logo Fabri Digital" />
@@ -882,8 +942,14 @@
         function abrirModalTrabajo(url) {
             const modal = document.getElementById('modalDrive');
             const iframe = document.getElementById('iframeDrive');
-            iframe.src = url;
-            modal.style.display = 'flex';
+            if (window.innerWidth <= 600) {
+                // En móvil, abrir PDF directamente en nueva pestaña para vista previa
+                window.open(url, '_blank');
+            } else {
+                // En desktop, mostrar en modal iframe
+                iframe.src = url;
+                modal.classList.add('visible');
+            }
         }
         document.querySelectorAll('.slide-portafolio[data-local], .feed-item[data-local]').forEach(el => {
             el.addEventListener('click', function(e) {
@@ -955,8 +1021,14 @@
             const iframe = document.getElementById('iframeDrive');
             // Mostrar modal
             window.abrirModalTrabajo = function(url) {
-                iframe.src = url;
-                modal.classList.add('visible');
+                if (window.innerWidth <= 600) {
+                    // En móvil, abrir PDF directamente en nueva pestaña para vista previa
+                    window.open(url, '_blank');
+                } else {
+                    // En desktop, mostrar en modal iframe
+                    iframe.src = url;
+                    modal.classList.add('visible');
+                }
             };
             // Cerrar modal
             function cerrarModal() {
