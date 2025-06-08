@@ -443,6 +443,7 @@
             .header {
                 justify-content: flex-start !important;
                 padding-left: 16px !important;
+                padding-right: 16px !important;
             }
             .menu-toggle {
                 display: flex;
@@ -457,7 +458,7 @@
             #toggle-darkmode {
                 display: flex !important;
                 position: absolute;
-                right: 20px;
+                right: 16px !important;
                 top: 50%;
                 transform: translateY(-50%);
                 order: 3 !important;
@@ -947,7 +948,7 @@
                 window.open(url, '_blank');
             } else {
                 // En desktop, mostrar en modal iframe
-                iframe.src = url;
+            iframe.src = url;
                 modal.classList.add('visible');
             }
         }
@@ -1026,8 +1027,8 @@
                     window.open(url, '_blank');
                 } else {
                     // En desktop, mostrar en modal iframe
-                    iframe.src = url;
-                    modal.classList.add('visible');
+                iframe.src = url;
+                modal.classList.add('visible');
                 }
             };
             // Cerrar modal

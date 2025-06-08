@@ -1707,10 +1707,12 @@
       }
     </style>
     <style>
-      /* Override Sobre mí: fuente 8px y título alineado izquierda negrita en móviles */
+      /* Ajuste móvil sección Sobre mí: párrafo sin negrita y tamaño 15px */
       @media (max-width: 600px) {
-        .sobre-mi-portafolio .sobre-mi-parrafo { font-size: 8px !important; }
-        .sobre-mi-portafolio .sobre-mi-titulo  { text-align: left !important; font-weight: bold !important; }
+        .sobre-mi-portafolio .sobre-mi-parrafo {
+          font-size: 15px !important;
+          font-weight: normal !important;
+        }
       }
     </style>
     <style>
@@ -1791,7 +1793,7 @@
         #toggle-darkmode {
           display: flex !important;
           order: 3 !important;
-          margin: 0 8px 0 0 !important;
+          margin: 0 16px 0 0 !important;
           position: relative !important;
           top: auto !important;
           right: auto !important;
@@ -2537,5 +2539,5 @@
         window.addEventListener('DOMContentLoaded', updateMobileTitles);
         window.addEventListener('resize', updateMobileTitles);
       </script>
-    </body>
+</body>
 </html>
