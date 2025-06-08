@@ -1394,6 +1394,24 @@
             font-size: 18px !important;
           }
         }
+
+        /* Ajustes tarjetas de servicios y sección Sobre mí en mobile ≤600px */
+        @media (max-width: 600px) {
+          /* Títulos de servicio alineados a la izquierda y sin negrita */
+          .servicios-feed-grid .servicio-card h3 {
+            text-align: left !important;
+            font-weight: normal !important;
+          }
+          /* Párrafos de servicio sin negrita */
+          .servicios-feed-grid .servicio-card p {
+            font-weight: normal !important;
+          }
+          /* Texto del sector Sobre mí sin negrita y tamaño mínimo */
+          .sobre-mi-portafolio .sobre-mi-parrafo {
+            font-weight: normal !important;
+            font-size: 12px !important;
+          }
+        }
     </style>
     <style>
     /* Ajustes de tamaño solo para mobile */
@@ -1748,6 +1766,55 @@
       #sliderPortafolio .titulo-animado,
       #testimonios h2 {
         padding: 12px 0 !important;
+      }
+    </style>
+    <!-- Ajuste menú desplegable en mobile del index (como portafolio) -->
+    <style>
+      @media (max-width: 768px) {
+        header.header {
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          padding: 12px 16px !important;
+        }
+        .menu-toggle {
+          order: 1 !important;
+        }
+        .logo {
+          order: 2 !important;
+          margin: 0 !important;
+        }
+        #toggle-darkmode {
+          order: 3 !important;
+          margin: 0 !important;
+          position: relative !important;
+          top: auto !important;
+          right: auto !important;
+          transform: none !important;
+        }
+        .navbar {
+          order: 4 !important;
+          width: auto !important;
+          max-width: 240px !important;
+          left: 16px !important;
+          right: auto !important;
+          text-align: center !important;
+        }
+        .navbar.active {
+          max-height: 250px !important;
+        }
+        .navbar ul {
+          flex-direction: column !important;
+          align-items: center !important;
+          gap: 8px !important;
+        }
+        .navbar ul li {
+          width: 100% !important;
+        }
+        .navbar ul li a {
+          display: block !important;
+          text-align: center !important;
+        }
       }
     </style>
 </head>
